@@ -1,0 +1,11 @@
+stages:
+  manifest:
+    cmd: uv run python scripts/make_manifest.py
+    deps:
+    - data/label_map.json
+    - data/oxford-iiit-pet
+    - data/splits/train.txt
+    - data/splits/val.txt
+    - scripts/make_manifest.py
+    outs:
+    - data/manifest.csv

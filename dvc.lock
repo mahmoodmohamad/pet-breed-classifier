@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  manifest:
+    cmd: uv run python scripts/make_manifest.py
+    deps:
+    - path: data/label_map.json
+      hash: md5
+      md5: 7bbb8cb5d2ebdc40679f2907c05e560e
+      size: 908
+    - path: data/oxford-iiit-pet
+      hash: md5
+      md5: fb773eb63522b0c8aa0f3e545779c7f2.dir
+      size: 1632137285
+      nfiles: 25866
+    - path: data/splits/train.txt
+      hash: md5
+      md5: 634c572165e4e97fa77b43df4bf44228
+      size: 51701
+    - path: data/splits/val.txt
+      hash: md5
+      md5: d40fd487fb2124823bc4be6f53cfa5ca
+      size: 12996
+    - path: scripts/make_manifest.py
+      hash: md5
+      md5: 9bed4d47f1393784dfa4564e6ca06534
+      size: 1542
+    outs:
+    - path: data/manifest.csv
+      hash: md5
+      md5: 96748c8d4238245041f8cb43f29b243c
+      size: 390771
