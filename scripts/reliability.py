@@ -22,7 +22,10 @@ y = va["y"]
 fig, axes = plt.subplots(1, 2, figsize=(10, 4.5))
 for ax, (title, probs) in zip(
     axes,
-    [("before (T=1)", logits.softmax(1)), (f"after (T={T:.3f})", (logits / T).softmax(1))],
+    [
+        ("before (T=1)", logits.softmax(1)),
+        (f"after (T={T:.3f})", (logits / T).softmax(1)),
+    ],
 ):
     conf, pred = probs.max(1)
     correct = (pred == y).float()
