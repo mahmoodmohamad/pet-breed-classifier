@@ -14,6 +14,7 @@ scaling, and an abstention threshold (`decision="uncertain"`), served via FastAP
 - Training: backbone frozen, features cached once, linear head trained on features
   (CPU only machine). 5 MLflow runs across 3 backbones.
 - Calibration (temperature scaling on val) and abstention threshold, logged to MLflow.
+- Reliability diagrams before/after temperature scaling: `docs/reliability_resnet50.png`.
 - FastAPI `/predict` (top-3 calibrated probabilities, `accept` / `uncertain`) and `/health`.
 - Test that API logits match the training-path logits within 1e-4.
 - GitHub Actions workflow (ruff + pytest) defined in `.github/workflows/ci.yml`;
@@ -47,7 +48,7 @@ Final model: resnet50, lr 0.001.
 ## Not implemented
 
 BentoML, TensorRT FP16, ONNX/OpenVINO export, Locust load tests, the 5 optimization
-techniques, monitoring/drift, Airflow retraining, reliability diagram plots, corrupted
+techniques, monitoring/drift, Airflow retraining, corrupted
 copies of the test split, final test-split evaluation.
 
 ## Run
